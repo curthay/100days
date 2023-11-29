@@ -1,0 +1,30 @@
+import os
+import time
+import random
+
+def rollDice(side):
+  result = random.randint(1,side)
+  return result
+
+def health():
+  healthStat =((rollDice(6)*rollDice(12))/2)+10
+  return healthStat
+
+def strength():
+  strengthStat =((rollDice(6)*rollDice(8))+12)
+  return strengthStat
+
+while True:
+  print ('Lets build your character')
+  print()
+  name = input('Name your Dude:')
+  type = input('Character Type (Human, Elf, Wizard, Orc):')
+  print()
+  print('Health:', health())
+  print('Strength:', strength())
+  print()
+  buildAnother = input('Do you want to build another Character?:')
+  if buildAnother=="No" or buildAnother=="no":
+    break
+  time.sleep(1)
+  os.system('clear')
